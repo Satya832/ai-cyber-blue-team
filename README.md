@@ -97,20 +97,20 @@ All agents communicate through an **EventBus**, process data in real-time, and t
 ai-cyber-blue-team/
 │
 ├── data/
-│ ├── sample_logs/
-│ └── memory_store.json
+│   ├── sample_logs/
+│   └── memory_store.json
 │
 ├── scripts/
-│ └── generate_logs.py
+│   └── generate_logs.py
 │
 ├── src/
-│ ├── agent_framework/
-│ ├── agents/
-│ ├── tools/
-│ ├── memory/
-│ ├── observability/
-│ ├── web/
-│ └── main.py
+│   ├── agent_framework/
+│   ├── agents/
+│   ├── tools/
+│   ├── memory/
+│   ├── observability/
+│   ├── web/
+│   └── main.py
 │
 ├── tests/
 ├── docs/
