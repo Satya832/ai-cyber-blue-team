@@ -1,0 +1,10 @@
+{
+  "id": 1763221717614,
+  "alert": {
+    "alert_type": "bruteforce",
+    "ip": "10.0.0.82",
+    "confidence": 0.7
+  },
+  "analysis": "Detected bruteforce",
+  "timestamp": 1763221717.6141987
+}

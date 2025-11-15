@@ -1,0 +1,5 @@
+flask==2.3.2
+pydantic==1.10.8
+pytest==7.4.0
+prometheus-client==0.17.0
+rich==13.5.0
