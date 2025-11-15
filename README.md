@@ -93,11 +93,10 @@ All agents communicate through an **EventBus**, process data in real-time, and t
 ---
 
 # 📂 Directory Structure
-
 ai-cyber-blue-team/
-│
 ├── data/
 │   ├── sample_logs/
+│   │   └── auth.log
 │   └── memory_store.json
 │
 ├── scripts/
@@ -105,16 +104,41 @@ ai-cyber-blue-team/
 │
 ├── src/
 │   ├── agent_framework/
+│   │   ├── agent_base.py
+│   │   ├── eventbus.py
+│   │   └── session_service.py
+│   │
 │   ├── agents/
+│   │   ├── log_monitor.py
+│   │   ├── threat_detector.py
+│   │   ├── incident_analyzer.py
+│   │   ├── mitigation_agent.py
+│   │   └── reporter.py
+│   │
 │   ├── tools/
+│   │   ├── log_parser.py
+│   │   └── attack_simulator.py
+│   │
 │   ├── memory/
+│   │   └── memory_bank.py
+│   │
 │   ├── observability/
+│   │   └── telemetry.py
+│   │
 │   ├── web/
+│   │   └── dashboard.py
+│   │
 │   └── main.py
 │
 ├── tests/
+│   ├── test_log_parser.py
+│   └── test_eventbus.py
+│
 ├── docs/
+│   └── submission_notes.md
+│
 └── README.md
+
 
 
 ---
