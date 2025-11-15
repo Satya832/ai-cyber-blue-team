@@ -91,8 +91,9 @@ All agents communicate through an **EventBus**, process data in real-time, and t
 
 
 ---
+## 📁 Directory Structure
 
-# 📂 Directory Structure
+```
 ai-cyber-blue-team/
 ├── data/
 │   ├── sample_logs/
@@ -138,8 +139,7 @@ ai-cyber-blue-team/
 │   └── submission_notes.md
 │
 └── README.md
-
-
+```
 
 ---
 
