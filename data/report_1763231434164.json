@@ -1,0 +1,9 @@
+{
+  "id": 1763231434164,
+  "alert": {
+    "alert_type": "sqli",
+    "confidence": 0.9
+  },
+  "analysis": "Detected sqli",
+  "timestamp": 1763231434.1640294
+}

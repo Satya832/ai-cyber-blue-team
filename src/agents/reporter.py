@@ -5,6 +5,7 @@ REPORT_DIR = Path("data")
 
 class ReporterAgent:
     def __init__(self, event_bus, session, telemetry):
+        print("[Init] Reporter READY")
         event_bus.subscribe("incident", self.report)
 
     def report(self, inc):

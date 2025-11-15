@@ -2,6 +2,7 @@ import time
 
 class IncidentAnalyzerAgent:
     def __init__(self, event_bus, session, telemetry):
+        print("[Init] IncidentAnalyzer READY")
         self.event_bus = event_bus
         self.session = session
         event_bus.subscribe("alert", self.handle)

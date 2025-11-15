@@ -3,6 +3,7 @@ from src.tools.log_parser import parse_lines
 
 class LogMonitorAgent:
     def __init__(self, event_bus, session, telemetry, log_path):
+        print("[Init] LogMonitorAgent READY")
         self.event_bus = event_bus
         self.session = session
         self.telemetry = telemetry

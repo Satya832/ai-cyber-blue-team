@@ -1,5 +1,6 @@
 class ThreatDetectorAgent:
     def __init__(self, event_bus, session, telemetry):
+        print("[Init] ThreatDetectorAgent READY")
         self.event_bus = event_bus
         event_bus.subscribe("log_event", self.handle)
 

@@ -1,30 +1,53 @@
-#!/usr/bin/env python3
-import time
-from pathlib import Path
-import argparse
 import random
+import time
 
-LOG_DIR = Path(__file__).resolve().parents[1] / 'data' / 'sample_logs'
+AUTH_LOG = "data/sample_logs/auth.log"
 
-def fill_auth(n=50):
-    p = LOG_DIR / 'auth.log'
-    with p.open('a') as f:
-        for i in range(n):
-            ip = f"10.0.0.{random.randint(2,250)}"
-            f.write(f"Failed password for root from {ip} port 22 ssh2\n")
-            time.sleep(0.01)
+def generate_bruteforce_logs(count=200):
+    print(f"[+] Generating {count} brute-force logs...")
 
-def sqli_example():
-    p = LOG_DIR / 'web_traffic.log'
-    with p.open('a') as f:
-        f.write("GET /index.php?id=1 OR 1=1 -- HTTP/1.1\n")
+    with open(AUTH_LOG, "a") as f:
+        for _ in range(count):
+            ip = f"10.0.0.{random.randint(1, 250)}"
+            log = f"Failed password for root from {ip} port 22 ssh2\n"
+            f.write(log)
 
-if __name__ == '__main__':
+    print(f"[+] Writing logs to {AUTH_LOG}")
+    print("[+] Done! Added brute-force logs successfully.\n")
+
+
+def generate_sqli_logs(count=20):
+    print(f"[+] Generating {count} SQL injection logs...")
+
+    with open(AUTH_LOG, "a") as f:
+        for _ in range(count):
+            ip = f"192.168.1.{random.randint(1, 250)}"
+            log = f'GET /login.php?user=" OR 1=1;-- from {ip}\n'
+            f.write(log)
+
+    print(f"[+] Writing logs to {AUTH_LOG}")
+    print("[+] Done! Added SQLi logs successfully.\n")
+
+
+if __name__ == "__main__":
+    import argparse
     parser = argparse.ArgumentParser()
-    parser.add_argument('--fill', action='store_true')
-    parser.add_argument('--sqli', action='store_true')
+
+    parser.add_argument("--fill", action="store_true", help="Generate brute-force logs")
+    parser.add_argument("--sqli", action="store_true", help="Generate SQLi logs")
+
     args = parser.parse_args()
+
+    print("\n=== LOG GENERATOR STARTED ===")
+
     if args.fill:
-        fill_auth(100)
+        generate_bruteforce_logs()
+
     if args.sqli:
-        sqli_example()
+        generate_sqli_logs()
+
+    if not args.fill and not args.sqli:
+        print("[-] No option selected. Use --fill or --sqli")
+
+    print("=== LOG GENERATOR FINISHED ===\n")
+
